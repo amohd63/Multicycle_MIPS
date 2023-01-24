@@ -1,8 +1,8 @@
-14
+28
 ~M 0 "" 0 $root
 ~A 1 "" 0 $root
-~M 3 "../src/instruction_memory.v" 13 instruction_memory
-~A 1 "../src/instruction_memory.v" 13 instruction_memory
+~M 3 "../src/instruction_memory.v" 1 instruction_memory
+~A 1 "../src/instruction_memory.v" 1 instruction_memory
 ~M 3 "../src/memory_data.v" 1 memory_data
 ~A 1 "../src/memory_data.v" 1 memory_data
 ~M 3 "../src/mux2to1.v" 1 mux2to1

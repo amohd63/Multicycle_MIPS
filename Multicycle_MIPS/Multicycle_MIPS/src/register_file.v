@@ -3,7 +3,7 @@ input[2:0] Ra, Rb, Rw;
 input enWrite, clk;
 input[23:0] BusW;
 output reg[23:0] BusA, BusB;
-reg [23:0] registers[7:0];
+reg [23:0] registers[7:0] = '{24'h000000, 24'h000000, 24'h000000, 24'h000000, 24'h000000, 24'h000000, 24'h000000, 24'h000000};
 reg Ra_in, Rb_in, Rw_in;
 
 always @(posedge clk) 
@@ -13,7 +13,9 @@ always @(posedge clk)
 		Rw_in = $unsigned(Rw);
 		BusA <= registers[Ra_in];
 		BusB <= registers[Rb_in];
-		if (enWrite)
+		if (enWrite && Rw_in != 0)
 			registers[Rw_in] <= BusW;
+		if (Rw_in == 0)
+			$display ("Tried to overwrite R0, but it's discarded!");
    end
 endmodule
