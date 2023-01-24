@@ -1,9 +1,13 @@
-11
+14
 ~M 0 "" 0 $root
 ~A 1 "" 0 $root
 ~M 3 "../src/instruction_memory.v" 13 instruction_memory
 ~A 1 "../src/instruction_memory.v" 13 instruction_memory
+~M 3 "../src/memory_data.v" 1 memory_data
+~A 1 "../src/memory_data.v" 1 memory_data
 ~M 3 "../src/mux2to1.v" 1 mux2to1
 ~A 1 "../src/mux2to1.v" 1 mux2to1
 ~M 3 "../src/mux4to1.v" 1 mux4_1
 ~A 1 "../src/mux4to1.v" 1 mux4_1
+~M 3 "../src/register_file.v" 1 register_file
+~A 1 "../src/register_file.v" 1 register_file
