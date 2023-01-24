@@ -1,0 +1,7 @@
+i<>.\src\mux2to1.v
+i<>.\src\mux4to1.v
+i<>.\src\register_file.v
+i<>.\src\instruction_memory.v
+i<>.\src\memory_data.v
+i<>.\src\alu.v
+i<>.\src\control_unit.v

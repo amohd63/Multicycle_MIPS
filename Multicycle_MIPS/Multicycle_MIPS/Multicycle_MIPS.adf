@@ -1,0 +1,41 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=4
+Current Config=compile
+
+[Configurations]
+compile=Multicycle_MIPS
+
+[Library]
+Multicycle_MIPS=.\Multicycle_MIPS\Multicycle_MIPS.lib
+
+[$LibMap$]
+Multicycle_MIPS=.
+Active_lib=
+
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VERILOG
+REFRESH_FLOW=1
+FLOWTOOLS=NONE
+FAMILY=
+
+[Files]
+/mux2to1.v=-1
+/mux4to1.v=-1
+/register_file.v=-1
+/instruction_memory.v=-1
+/memory_data.v=-1
+/alu.v=-1
+/control_unit.v=-1
+
+[Files.Data]
+.\src\mux2to1.v=Verilog Source Code
+
+.\src\mux4to1.v=Verilog Source Code
+.\src\register_file.v=Verilog Source Code
+.\src\instruction_memory.v=Verilog Source Code
+.\src\memory_data.v=Verilog Source Code
+.\src\alu.v=Verilog Source Code
+.\src\control_unit.v=Verilog Source Code

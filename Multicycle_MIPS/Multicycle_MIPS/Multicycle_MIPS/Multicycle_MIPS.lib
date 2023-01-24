@@ -1,0 +1,47 @@
+timestamp=1674567123473
+
+[~A]
+C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/instruction_memory.v=0*15991*16678
+C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/mux2to1.v=0*11093*11625
+C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/mux4to1.v=0*14319*14915
+LastVerilogToplevel=instruction_memory
+ModifyID=11
+Version=74
+
+[~MFT]
+0=4|0Multicycle_MIPS.mgf|16678|9320
+1=3|1Multicycle_MIPS.mgf|14790|12018
+3=6|3Multicycle_MIPS.mgf|18839|8202
+
+[$root]
+A/$root=22|||1*14384
+BinW64/$root=3*9900
+SLP=3*10015
+Version=12.0.118.7745 (Windows64)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|c73a565f2ade592f8ac1c68f484c9216ae9464e1e7d8d980ca34e87cd354372a
+
+[instruction_memory]
+A/instruction_memory=22|../src/instruction_memory.v|13|1*14790
+BinW64/instruction_memory=3*10083
+R=../src/instruction_memory.v|13
+SLP=3*18839
+Version=12.0.118.7745 (Windows64)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|aa5cdeefbdd8ec0382d54b92f1958785a79624349d5b8f82688a21519974b3e63c4960071897cb6ba08374b134a2f728
+
+[mux2to1]
+A/mux2to1=22|../src/mux2to1.v|1|1*9974
+BinW64/mux2to1=3*6860
+R=../src/mux2to1.v|1
+SLP=3*7361
+Version=12.0.118.7745 (Windows64)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|7ed568f89727f83191a8cdbbab1b4cf926527262ddaa47cb266f3a3c4d9b973a09e19069970d951f89e5ab130c704bae
+
+[mux4_1]
+A/mux4_1=22|../src/mux4to1.v|1|1*13088
+BinW64/mux4_1=3*8924
+R=../src/mux4to1.v|1
+SLP=3*9580
+Version=12.0.118.7745 (Windows64)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|152a74c975fdf9770573790778c8c5a009140b1bf6ee4768cc70547c9bf22e6d
+
+[~U]
+$root=12|0*15552|
+instruction_memory=12|0*15750||0x10
+mux2to1=12|0*10881||0x10
+mux4_1=12|0*14089||0x10
