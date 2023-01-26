@@ -85,7 +85,11 @@ with open("code.txt", "r") as file:
 
             for i in range(len(comp) - 2):
                 bin_instruct += decimal_to_3bit_binary(int(re.sub(r'\D', '', comp[i + 1])))
-            bin_instruct += twos_complement_10(int(comp[3]))
+
+            if comp[0] == "SUBI":
+                bin_instruct += twos_complement_10(int(comp[3]) * (-1))
+            else:
+                bin_instruct += twos_complement_10(int(comp[3]))
 
         elif instruction_type.get(inst) == "J":
             bin_instruct += tempCond
@@ -96,19 +100,24 @@ with open("code.txt", "r") as file:
         print("Hexadecimal representation: " + hex(int(bin_instruct, 2)))
         print("Length: " + str(len(bin_instruct)) + " bits")
         print()
-        memory += hex(int(bin_instruct, 2)).upper().replace("0X", "24'h") + ", "
-        num_of_instructions += 1
+        #memory += hex(int(bin_instruct, 2)).upper().replace("0X", "24'h") + ", "
+        tempStr = hex(int(bin_instruct, 2)).upper().replace("0X", "")
+        tempStr = "0" * (6 - len(tempStr)) + tempStr
+        arrBytes = re.findall('.{1,2}', tempStr)
+        tempStr = [("8'h" + arrBytes[i] + ",") for i in range(len(arrBytes))]
+        memory += " ".join(tempStr) + " "
+        num_of_instructions += 3
 
-
-memory += ("24'h000000, ") * (1024 - num_of_instructions)
+print(memory)
+memory += ("8'h00, ") * (1024 - num_of_instructions)
 index = memory.rindex(',')
 new_mem = memory[:index] + memory[index+1:]
 
 instruction_memory_code = "module instruction_memory(address, out_data, clk);\n" + "output reg [23:0] out_data;\n" + "input [23:0] address;\n" + "input clk;\n"
 
-instruction_memory_code += "reg [23:0] mem [0:1023] = '{" + new_mem + "};\n"
+instruction_memory_code += "reg [7:0] mem [0:1023] = '{" + new_mem + "};\n"
 
-instruction_memory_code += "always @(posedge clk)\n" + "begin\n" + "out_data <= mem[address];\n" + "end\n" + "endmodule\n"
+instruction_memory_code += "always @(posedge clk)\n" + "begin\n" + "out_data <= {mem[address], mem[address+3], mem[address+6]};\n" + "end\n" + "endmodule\n"
 
 print("-" * 20)
 print("Instruction memory Verilog code\n")
@@ -119,3 +128,5 @@ with open("./Multicycle_MIPS/Multicycle_MIPS/src/instruction_memory.v", "w") as 
     file.write(instruction_memory_code)
 
 print("Code is written to {instruction_memory.v} successfully.")
+
+

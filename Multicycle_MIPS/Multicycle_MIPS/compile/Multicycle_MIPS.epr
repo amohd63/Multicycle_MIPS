@@ -1,7 +1,1 @@
-"../src/register_file.v"	1
-"../src/mux2to1.v"	1
-"../src/mux4to1.v"	1
-"../src/instruction_memory.v"	1
-"../src/memory_data.v"	1
-"../src/control_unit.v"	1
 "../src/alu.v"	1

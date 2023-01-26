@@ -1,0 +1,217 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+alog -O2 -sve -msg 5 -sv2k12 -work Multicycle_MIPS $dsn/src/alu.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: alu.
+# $root top modules: mux2to1 mux4_1 instruction_memory memory_data register_file control_unit alu main.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work Multicycle_MIPS $dsn/src/alu.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: alu.
+# $root top modules: mux2to1 mux4_1 instruction_memory memory_data register_file control_unit alu main.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+asim -O5 +access +w_nets +access +r +access +r+w alu
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.1 [s]
+# SLP: Finished : 0.1 [s]
+# SLP: 0 primitives and 1 (100.00%) other processes in SLP
+# SLP: 0 signals in SLP and 8 (80.00%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5370 kB (elbread=427 elab2=4809 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\src\wave.asdb
+#  11:34 PM, Thursday, January 26, 2023
+#  Simulation has been initialized
+# 10 object(s) traced.
+# Waveform file 'untitled.awc' connected to 'C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/wave.asdb'.
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+alog -O2 -sve -msg 5 -sv2k12 -work Multicycle_MIPS $dsn/src/alu.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: alu.
+# $root top modules: mux2to1 mux4_1 instruction_memory memory_data register_file control_unit alu main.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.1 [s]
+# SLP: Finished : 0.1 [s]
+# SLP: 0 primitives and 1 (100.00%) other processes in SLP
+# SLP: 0 signals in SLP and 7 (70.00%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5370 kB (elbread=427 elab2=4809 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\src\wave.asdb
+#  11:37 PM, Thursday, January 26, 2023
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/wave.asdb'.
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+alog -O2 -sve -msg 5 -sv2k12 -work Multicycle_MIPS $dsn/src/alu.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: alu.
+# $root top modules: mux2to1 mux4_1 instruction_memory memory_data register_file control_unit alu main.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.1 [s]
+# SLP: Finished : 0.1 [s]
+# SLP: 0 primitives and 1 (100.00%) other processes in SLP
+# SLP: 0 signals in SLP and 7 (70.00%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5370 kB (elbread=427 elab2=4809 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\src\wave.asdb
+#  11:37 PM, Thursday, January 26, 2023
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/wave.asdb'.
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+alog -O2 -sve -msg 5 -sv2k12 -work Multicycle_MIPS $dsn/src/alu.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2570 alu.v : (3, 1): Undefined port: SF.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work Multicycle_MIPS $dsn/src/alu.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP5103 alu.v : (8, 21): Undeclared identifier: clk.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work Multicycle_MIPS $dsn/src/alu.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: alu.
+# $root top modules: mux2to1 mux4_1 instruction_memory memory_data register_file control_unit alu main.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work Multicycle_MIPS $dsn/src/alu.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: alu.
+# $root top modules: mux2to1 mux4_1 instruction_memory memory_data register_file control_unit alu main.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.1 [s]
+# SLP: Finished : 0.1 [s]
+# SLP: 0 primitives and 1 (100.00%) other processes in SLP
+# SLP: 0 signals in SLP and 6 (100.00%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5370 kB (elbread=427 elab2=4809 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\src\wave.asdb
+#  11:44 PM, Thursday, January 26, 2023
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/wave.asdb'.
+# Warning: WAVEFORM: Object matching /alu/SF not found in C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/wave.asdb.
+# Warning: WAVEFORM: Object matching /alu/clk not found in C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/wave.asdb.
+# Warning: WAVEFORM: Object matching /alu/BEQFlag not found in C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/wave.asdb.
+# Warning: WAVEFORM: Object matching /alu/zero not found in C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/wave.asdb.
+# KERNEL: Error: Cannot find signal /alu/SF
+# VSIM: Error: Cannot force signal "/alu/SF" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\50ns\REV\0".
+# KERNEL: Error: Cannot find signal /alu/clk
+# VSIM: Error: Cannot force signal "/alu/clk" with formula "0 0fs, 1 5ns -r 10ns".
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+endsim
+# VSIM: Simulation has finished.

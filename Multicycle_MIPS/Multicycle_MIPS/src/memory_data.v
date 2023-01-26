@@ -3,12 +3,14 @@ module memory_data(out_data, address, in_data, memRd, memWr, clk);
    input [23:0] in_data;
    input [23:0] address;
    input memRd, memWr, clk;
-   reg [23:0] mem [1023:0]; 
+   reg [7:0] mem [0:1023]; 
    always @(posedge clk) 
 	begin
 		if (memWr)
-			mem[address] <= in_data;
+			mem[address+2] <= in_data[7:0];
+			mem[address+1] <= in_data[15:8];
+			mem[address] <= in_data[23:16];
 	    if (memRd)
-            out_data <= mem[address];
+            out_data <= {mem[address], mem[address+1], mem[address+2]};
    end
 endmodule

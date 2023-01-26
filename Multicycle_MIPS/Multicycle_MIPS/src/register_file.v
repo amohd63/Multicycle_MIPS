@@ -3,8 +3,8 @@ input[2:0] Ra, Rb, Rw;
 input enWrite, clk;
 input[23:0] BusW;
 output reg[23:0] BusA, BusB;
-reg [23:0] registers[7:0] = '{24'h000000, 24'h000000, 24'h000000, 24'h000000, 24'h000000, 24'h000000, 24'h000000, 24'h000000};
-reg Ra_in, Rb_in, Rw_in;
+reg [23:0] registers[7:0] = '{24'h000001, 24'h000010, 24'h000100, 24'h000000, 24'h000000, 24'h000000, 24'h010000, 24'h100000};
+integer Ra_in, Rb_in, Rw_in;
 
 always @(posedge clk) 
 	begin

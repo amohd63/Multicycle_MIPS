@@ -41,6 +41,7 @@ SimulationAccessNetsModules=
 /memory_data.v=-1
 /alu.v=-1
 /control_unit.v=-1
+/main.v=-1
 
 [Files.Data]
 .\src\mux2to1.v=Verilog Source Code
@@ -51,3 +52,10 @@ SimulationAccessNetsModules=
 .\src\memory_data.v=Verilog Source Code
 .\src\alu.v=Verilog Source Code
 .\src\control_unit.v=Verilog Source Code
+.\src\main.v=Verilog Source Code
+[SpecTracer]
+WindowVisible=0
+[HierarchyViewer]
+HierarchyInformation=
+ShowHide=ShowTopLevel
+Selected=

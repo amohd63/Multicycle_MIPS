@@ -5,3 +5,4 @@
 .\src\memory_data.v
 .\src\alu.v
 .\src\control_unit.v
+.\src\main.v
