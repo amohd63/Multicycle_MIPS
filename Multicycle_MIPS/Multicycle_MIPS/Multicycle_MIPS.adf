@@ -33,6 +33,14 @@ SimulationAccessReadWriteModules=
 SimulationAccessNetsPaths=
 SimulationAccessNetsModules=
 
+[SpecTracer]
+WindowVisible=0
+
+[HierarchyViewer]
+HierarchyInformation=
+ShowHide=ShowTopLevel
+Selected=
+
 [Files]
 /mux2to1.v=-1
 /mux4to1.v=-1
@@ -42,10 +50,14 @@ SimulationAccessNetsModules=
 /alu.v=-1
 /control_unit.v=-1
 /main.v=-1
+/pc_control.v=-1
+/update_flags.v=-1
+/extender_17_bit.v=-1
+/extender_10_bit.v=-1
+/dasda.v=-1
 
 [Files.Data]
 .\src\mux2to1.v=Verilog Source Code
-
 .\src\mux4to1.v=Verilog Source Code
 .\src\register_file.v=Verilog Source Code
 .\src\instruction_memory.v=Verilog Source Code
@@ -53,9 +65,9 @@ SimulationAccessNetsModules=
 .\src\alu.v=Verilog Source Code
 .\src\control_unit.v=Verilog Source Code
 .\src\main.v=Verilog Source Code
-[SpecTracer]
-WindowVisible=0
-[HierarchyViewer]
-HierarchyInformation=
-ShowHide=ShowTopLevel
-Selected=
+.\src\pc_control.v=Verilog Source Code
+.\src\update_flags.v=Verilog Source Code
+.\src\extender_17_bit.v=Verilog Source Code
+
+.\src\extender_10_bit.v=Verilog Source Code
+.\src\dasda.v=Verilog Source Code

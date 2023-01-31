@@ -6,3 +6,8 @@
 .\src\alu.v
 .\src\control_unit.v
 .\src\main.v
+.\src\pc_control.v
+.\src\update_flags.v
+.\src\extender_17_bit.v
+.\src\extender_10_bit.v
+.\src\dasda.v

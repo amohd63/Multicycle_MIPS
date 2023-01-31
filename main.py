@@ -113,11 +113,25 @@ memory += ("8'h00, ") * (1024 - num_of_instructions)
 index = memory.rindex(',')
 new_mem = memory[:index] + memory[index+1:]
 
-instruction_memory_code = "module instruction_memory(address, out_data, clk);\n" + "output reg [23:0] out_data;\n" + "input [23:0] address;\n" + "input clk;\n"
+instruction_memory_code = "module instruction_memory(address, out_data, clk, reset);\n" + \
+                          "output reg [23:0] out_data;\n" + \
+                          "input [23:0] address;\n" + \
+                          "input clk, reset;\n"
 
 instruction_memory_code += "reg [7:0] mem [0:1023] = '{" + new_mem + "};\n"
 
-instruction_memory_code += "always @(posedge clk)\n" + "begin\n" + "out_data <= {mem[address], mem[address+3], mem[address+6]};\n" + "end\n" + "endmodule\n"
+instruction_memory_code += "always @(posedge clk or negedge reset)\n" + \
+                           "begin\n" + \
+                           "if (~reset)\n" + \
+                           "begin\n" + \
+                           "out_data = $unsigned(0);\n" + \
+                           "end\n" + \
+                           "else\n" + \
+                           "begin\n"\
+                           "out_data <= {mem[address], mem[address+1], mem[address+2]};\n" + \
+                           "end\n" \
+                           + "end\n" + \
+                           "endmodule\n"
 
 print("-" * 20)
 print("Instruction memory Verilog code\n")
