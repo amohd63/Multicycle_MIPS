@@ -14,3 +14,7 @@ For writing boolean expressions and equations, I used these two codes [Equations
 Otherwise, all .csv files attached are the truth tables which I used with the codes above.
 ***
 You can find online websites for generating the boolean equations, I found [this website](https://www.charlie-coleman.com/experiments/kmap/) very useful.
+***
+**How to run the Verilog code**
+
+In the project files [here](https://github.com/amohd63/Multicycle_MIPS/tree/master/Multicycle_MIPS/Multicycle_MIPS/src), open **datapath_tb_runtest.do** file, then click on "**Execute script**" [image](https://drive.google.com/file/d/18shCNhLaPEUAqhchZfMcS6zs2e-3uzxD/view?usp=sharing).
