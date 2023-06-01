@@ -1,0 +1,3 @@
+SUBISF R1, R0, 0
+SUBISF R1, R1, -1
+ADD R1, R1, 3
