@@ -9,9 +9,11 @@ The implementation can be found [here](https://github.com/amohd63/Multicycle_MIP
 
 The testing of all instructions, [here](https://github.com/amohd63/Multicycle_MIPS/tree/master/Testing).
 ***
-For writing boolean expressions and equations, I used these two codes [Equations with 2-bit output](https://github.com/amohd63/Multicycle_MIPS/blob/master/2_bit_truth_table.py), [Equations with 1-bit output](https://github.com/amohd63/Multicycle_MIPS/blob/master/1_bit_truth_table.py).
+For generating boolean expressions, I used these two [python codes](https://github.com/amohd63/Multicycle_MIPS/tree/master/Python%20codes) for reading the truth tables written in .csv files and extract the indcies of ones and don't care terms to be used later for writing the equations.
 
-Otherwise, all .csv files attached are the truth tables which I used with the codes above.
+Also, I wrote a python code, [main.py](https://github.com/amohd63/Multicycle_MIPS/blob/master/Python%20codes/main.py), for assembling any assembly code, [for example](https://github.com/amohd63/Multicycle_MIPS/blob/master/Assembly%20code.txt), to be used in Verilog.
+
+Otherwise, all .csv files [attached](https://github.com/amohd63/Multicycle_MIPS/tree/master/.CSV%20files) the truth tables which I used with the codes above.
 ***
 You can find online websites for generating the boolean equations, I found [this website](https://www.charlie-coleman.com/experiments/kmap/) very useful.
 ***
