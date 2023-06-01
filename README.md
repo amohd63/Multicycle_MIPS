@@ -13,7 +13,7 @@ For generating boolean expressions, I used these two [python codes](https://gith
 
 Also, I wrote a python code, [main.py](https://github.com/amohd63/Multicycle_MIPS/blob/master/Python%20codes/main.py), for assembling any assembly code, [for example](https://github.com/amohd63/Multicycle_MIPS/blob/master/Assembly%20code.txt), to be used in Verilog.
 
-Otherwise, all .csv files [attached](https://github.com/amohd63/Multicycle_MIPS/tree/master/.CSV%20files) the truth tables which I used with the codes above.
+Otherwise, all .csv files [attached](https://github.com/amohd63/Multicycle_MIPS/tree/master/.CSV%20files), are the truth tables which I used with the codes above.
 ***
 You can find online websites for generating the boolean equations, I found [this website](https://www.charlie-coleman.com/experiments/kmap/) very useful.
 ***
