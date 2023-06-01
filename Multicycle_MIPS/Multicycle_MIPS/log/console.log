@@ -1,20 +1,42 @@
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
-alog -O2 -sve -msg 5 -sv2k12 -work Multicycle_MIPS $dsn/src/dasda.v
+runscript -do "C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/datapath_tb_runtest.do"
+setactivelib -work
+# #Compiling UUT module design files
+comp -include $dsn\src\main.v
 # Pass 1. Scanning modules hierarchy.
 # Info: VCP2113 Module \$root found in current working library.
 # Pass 2. Processing instantiations.
 # Pass 3. Processing behavioral statements.
-# Warning: VCP2803 dasda.v : (431, 53): Function register_file result is ignored.
+# Warning: VCP2803 main.v : (224, 25): Function reset_reg result is ignored.
+# Warning: VCP2803 main.v : (302, 57): Function register_file result is ignored.
+# Warning: VCP2814 main.v : (352, 20): Function reset_reg should return a value.
 # Running Optimizer.
 # ELB/DAG code generating.
 # Info: VCP2113 Module \$root found in current working library.
-# Unit top modules: main.
-# $root top modules: main update_flags extender_10_bit extender_17_bit memory_data instruction_memory mux2to1 mux4_1 register_file alu control_unit pc_control.
-# Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
+# $root top modules: update_flags extender_10_bit extender_17_bit memory_data instruction_memory mux4_1 register_file alu control_unit pc_control datapath_tb extender.
+# Compile success 0 Errors 3 Warnings  Analysis time: 1[s].
 # Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
 # done
-asim -O5 +access +w_nets +access +r +access +r+w main
+comp -include "$dsn\src\datapath_tb.v"
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module main found in current working library.
+# Warning: VCP2127 Unable to map port type: unknown for port: registers in library module: main. Connection rules will not be checked for such port.
+# Warning: VCP2127 Unable to map port type: unknown for port: regPC in library module: main. Connection rules will not be checked for such port.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Warning: VCP2803 datapath_tb.v : (50, 48): Function UnitScopePackage_86.display_instruction result is ignored.
+# Warning: VCP2814 datapath_tb.v : (138, 30): Function display_instruction should return a value.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: datapath_tb.
+# $root top modules: update_flags extender_10_bit extender_17_bit memory_data instruction_memory mux4_1 register_file alu control_unit pc_control datapath_tb extender.
+# Compile success 0 Errors 4 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+asim +access +r datapath_tb
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
 # VSIM: Stack memory: 32MB
@@ -29,26 +51,20 @@ asim -O5 +access +w_nets +access +r +access +r+w main
 # SLP: Elaboration phase ...
 # SLP: Elaboration phase ... done : 0.0 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.1 [s]
-# SLP: Finished : 0.2 [s]
-# SLP: 0 primitives and 1 (100.00%) other processes in SLP
-# SLP: 0 signals in SLP and 107 (97.27%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.2 [s].
+# SLP: Generation phase ... done : 0.2 [s]
+# SLP: Finished : 0.3 [s]
+# SLP: 0 primitives and 2 (100.00%) other processes in SLP
+# SLP: 165 (96.49%) signals in SLP and 6 (3.51%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.3 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5490 kB (elbread=427 elab2=4929 kernel=134 sdf=0)
+# Allocation: Simulator allocated 4855 kB (elbread=427 elab2=4292 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\src\wave.asdb
-#  2:49 AM, Tuesday, January 31, 2023
+#  1:59 PM, Thursday, June 1, 2023
 #  Simulation has been initialized
-# KERNEL: Error: Cannot find signal /alu/A
-# VSIM: Error: Cannot force signal "/alu/A" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\10ns\REV\0".
 # KERNEL: Error: Cannot find signal /main/PC
 # VSIM: Error: Cannot force signal "/main/PC" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\10ns\REV\0".
-# KERNEL: Error: Cannot find signal /alu/B
-# VSIM: Error: Cannot force signal "/alu/B" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\10ns\REV\0".
-# KERNEL: Error: Cannot find signal /alu/ALUop
-# VSIM: Error: Cannot force signal "/alu/ALUop" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\25ns\REV\0".
 # KERNEL: Error: Cannot find signal /alu/SF
 # VSIM: Error: Cannot force signal "/alu/SF" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\50ns\REV\0".
 # KERNEL: Error: Cannot find signal /alu/clk
@@ -69,7 +85,1933 @@ asim -O5 +access +w_nets +access +r +access +r+w main
 # VSIM: Error: Cannot force signal "/instruction_memory/clk" with formula "0 0fs, 1 5ns -r 10ns".
 # KERNEL: Error: Cannot find signal /instruction_memory/address
 # VSIM: Error: Cannot force signal "/instruction_memory/address" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\3\PERIOD\10ns\REV\0".
-# 110 object(s) traced.
+# KERNEL: Error: Cannot find signal /main/clk
+# VSIM: Error: Cannot force signal "/main/clk" with formula "0 0fs, 1 50ns -r 100ns".
+# KERNEL: Error: Cannot find signal /main/reset
+# VSIM: Error: Cannot force signal "/main/reset" with formula "0 5ns, 1 6ns".
+# KERNEL: Error: Cannot find signal /alu/A
+# VSIM: Error: Cannot force signal "/alu/A" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\10ns\REV\0".
+# KERNEL: Error: Cannot find signal /alu/B
+# VSIM: Error: Cannot force signal "/alu/B" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\15ns\REV\0".
+# KERNEL: Error: Cannot find signal /alu/ALUop
+# VSIM: Error: Cannot force signal "/alu/ALUop" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\150ns\REV\0".
+
+wave
+wave -noreg clk
+wave -noreg reset
+
+run
+# 2 object(s) traced.
 # Waveform file 'untitled.awc' connected to 'C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/wave.asdb'.
+# KERNEL: Instruction no.: 1
+# KERNEL: Instruction: ADDISF R0, R0, 0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000100010000000000000000
+# KERNEL: PC: 000000
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000000
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000003
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000003
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: Add
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 1
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 0
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 2
+# KERNEL: Instruction: SUBSF R1, R1, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000010010010010000000000
+# KERNEL: PC: 000003
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000000
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 1
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: ff2400
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000006
+# KERNEL: Jump target address: 056c00
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: fd6c06
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: Sub
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 1
+# KERNEL: 
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 1
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 3
+# KERNEL: Instruction: ADDI R1, R1, 5
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000100000010010000000101
+# KERNEL: PC: 000006
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000000
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 1
+# KERNEL: Rb: 1
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000005
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000009
+# KERNEL: Jump target address: 00000f
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000018
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000005
+# KERNEL: 
+# KERNEL: Operation: Add
+# KERNEL: ALU result: 000005
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 1
+# KERNEL: Data: 000005
+# KERNEL: Data in register file: 000005
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 4
+# KERNEL: Instruction: CASNE R2, R1, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 100000100100010000000000
+# KERNEL: PC: 000009
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000005
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 1
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000005
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00000c
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000005
+# KERNEL: Branch: 00000c
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 2
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 5
+# KERNEL: Instruction: SW R1, R3, 0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000101000010110000000000
+# KERNEL: PC: 00000c
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000005
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 3
+# KERNEL: Rb: 1
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000005
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00000f
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 00000f
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 1
+# KERNEL: 
+# KERNEL: MEM stage
+# KERNEL: Contents:
+# KERNEL: Write address: 000000
+# KERNEL: Data in: 000005
+# KERNEL: Memory content: 000005
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 6
+# KERNEL: Instruction: LWS R4, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000001001000000000000000
+# KERNEL: PC: 00000f
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000005
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000012
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000012
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 1
+# KERNEL: 
+# KERNEL: MEM stage
+# KERNEL: Contents:
+# KERNEL: Read address: 000000
+# KERNEL: Memory content: 000005
+# KERNEL: Memory output: 000005
+# KERNEL: 
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 4
+# KERNEL: Data: 000005
+# KERNEL: Data in register file: 000005
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 5
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 7
+# KERNEL: Instruction: JAL 9
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000110100000000000001001
+# KERNEL: PC: 000012
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000005
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000009
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000015
+# KERNEL: Jump target address: 00001b
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000030
+# KERNEL: 
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 7
+# KERNEL: Data: 000015
+# KERNEL: Data in register file: 000015
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 3
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 8
+# KERNEL: Instruction: LUI 5
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000111000000000000000101
+# KERNEL: PC: 00001b
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000005
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000005
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00001e
+# KERNEL: Jump target address: 00000f
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 00002d
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000004
+# KERNEL: Input B: 000005
+# KERNEL: 
+# KERNEL: Operation: Shift
+# KERNEL: ALU result: 000050
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 1
+# KERNEL: Data: 000050
+# KERNEL: Data in register file: 000050
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 9
+# KERNEL: Instruction: JR R7, 
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000011000001110000000000
+# KERNEL: PC: 00001e
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 7
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000015
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 001c00
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000021
+# KERNEL: Jump target address: 005400
+# KERNEL: Jump and return: 000015
+# KERNEL: Branch: 005421
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 2
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 10
+# KERNEL: Instruction: ADD R0, R0, R1
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000001100000000010000000
+# KERNEL: PC: 000015
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 1
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000050
+# KERNEL: Extended value: 000080
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000018
+# KERNEL: Jump target address: 000180
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000198
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000050
+# KERNEL: 
+# KERNEL: Operation: Add
+# KERNEL: ALU result: 000050
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000050
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 11
+# KERNEL: Instruction: J 11
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000110000000000000001011
+# KERNEL: PC: 000018
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 00000b
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00001b
+# KERNEL: Jump target address: 000021
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 00003c
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 2
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 12
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 000021
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000024
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000024
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 13
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 000024
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000027
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000027
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 14
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 000027
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00002a
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 00002a
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 15
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 00002a
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00002d
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 00002d
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 16
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 00002d
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000030
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000030
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 17
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 000030
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000033
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000033
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 18
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 000033
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000036
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000036
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 
+# #End simulation macro
 run 100 ns
-# KERNEL: stopped at time: 100 ns
+# KERNEL: stopped at time: 18310 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+runscript -do "C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/datapath_tb_runtest.do"
+setactivelib -work
+# #Compiling UUT module design files
+comp -include $dsn\src\main.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Warning: VCP2803 main.v : (224, 25): Function reset_reg result is ignored.
+# Warning: VCP2803 main.v : (302, 57): Function register_file result is ignored.
+# Warning: VCP2814 main.v : (352, 20): Function reset_reg should return a value.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: update_flags extender_10_bit extender_17_bit memory_data instruction_memory mux4_1 register_file alu control_unit pc_control datapath_tb extender.
+# Compile success 0 Errors 3 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+comp -include "$dsn\src\datapath_tb.v"
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module main found in current working library.
+# Warning: VCP2127 Unable to map port type: unknown for port: registers in library module: main. Connection rules will not be checked for such port.
+# Warning: VCP2127 Unable to map port type: unknown for port: regPC in library module: main. Connection rules will not be checked for such port.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Warning: VCP2803 datapath_tb.v : (50, 48): Function UnitScopePackage_87.display_instruction result is ignored.
+# Warning: VCP2814 datapath_tb.v : (138, 30): Function display_instruction should return a value.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: datapath_tb.
+# $root top modules: update_flags extender_10_bit extender_17_bit memory_data instruction_memory mux4_1 register_file alu control_unit pc_control datapath_tb extender.
+# Compile success 0 Errors 4 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+asim +access +r datapath_tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.2 [s]
+# SLP: Finished : 0.2 [s]
+# SLP: 0 primitives and 2 (100.00%) other processes in SLP
+# SLP: 165 (96.49%) signals in SLP and 6 (3.51%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.2 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4855 kB (elbread=427 elab2=4292 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\src\wave.asdb
+#  2:01 PM, Thursday, June 1, 2023
+#  Simulation has been initialized
+# KERNEL: Error: Cannot find signal /main/PC
+# VSIM: Error: Cannot force signal "/main/PC" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\10ns\REV\0".
+# KERNEL: Error: Cannot find signal /alu/SF
+# VSIM: Error: Cannot force signal "/alu/SF" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\50ns\REV\0".
+# KERNEL: Error: Cannot find signal /alu/clk
+# VSIM: Error: Cannot force signal "/alu/clk" with formula "0 0fs, 1 5ns -r 10ns".
+# KERNEL: Error: Cannot find signal /extender_17_bit/in
+# VSIM: Error: Cannot force signal "/extender_17_bit/in" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\-5\INC\1\PERIOD\10ns\REV\0".
+# KERNEL: Error: Cannot find signal /extender_10_bit/ExtOp
+# VSIM: Error: Cannot force signal "/extender_10_bit/ExtOp" with formula "0 0fs, 1 5ns -r 10ns".
+# KERNEL: Error: Cannot find signal /extender_10_bit/in
+# VSIM: Error: Cannot force signal "/extender_10_bit/in" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\-5\INC\1\PERIOD\10ns\REV\0".
+# KERNEL: Error: Cannot find signal /register_file/Ra
+# VSIM: Error: Cannot force signal "/register_file/Ra" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\5ns\REV\0".
+# KERNEL: Error: Cannot find signal /register_file/Rb
+# VSIM: Error: Cannot force signal "/register_file/Rb" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\10ns\REV\0".
+# KERNEL: Error: Cannot find signal /register_file/clk
+# VSIM: Error: Cannot force signal "/register_file/clk" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\10ns\REV\0".
+# KERNEL: Error: Cannot find signal /instruction_memory/clk
+# VSIM: Error: Cannot force signal "/instruction_memory/clk" with formula "0 0fs, 1 5ns -r 10ns".
+# KERNEL: Error: Cannot find signal /instruction_memory/address
+# VSIM: Error: Cannot force signal "/instruction_memory/address" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\3\PERIOD\10ns\REV\0".
+# KERNEL: Error: Cannot find signal /main/clk
+# VSIM: Error: Cannot force signal "/main/clk" with formula "0 0fs, 1 50ns -r 100ns".
+# KERNEL: Error: Cannot find signal /main/reset
+# VSIM: Error: Cannot force signal "/main/reset" with formula "0 5ns, 1 6ns".
+# KERNEL: Error: Cannot find signal /alu/A
+# VSIM: Error: Cannot force signal "/alu/A" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\10ns\REV\0".
+# KERNEL: Error: Cannot find signal /alu/B
+# VSIM: Error: Cannot force signal "/alu/B" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\15ns\REV\0".
+# KERNEL: Error: Cannot find signal /alu/ALUop
+# VSIM: Error: Cannot force signal "/alu/ALUop" with formula "\counter\TYPE\1\DIR\1\RADIX\10\START\0\INC\1\PERIOD\150ns\REV\0".
+
+wave
+wave -noreg clk
+wave -noreg reset
+
+run
+# 2 object(s) traced.
+# Waveform file 'untitled.awc' connected to 'C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/wave.asdb'.
+# KERNEL: Instruction no.: 1
+# KERNEL: Instruction: ADDISF R0, R0, 0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000100010000000000000000
+# KERNEL: PC: 000000
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000000
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000003
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000003
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: Add
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 1
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 0
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 2
+# KERNEL: Instruction: SUBSF R1, R1, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000010010010010000000000
+# KERNEL: PC: 000003
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000000
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 1
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: ff2400
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000006
+# KERNEL: Jump target address: 056c00
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: fd6c06
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: Sub
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 1
+# KERNEL: 
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 1
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 3
+# KERNEL: Instruction: ADDI R1, R1, 5
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000100000010010000000101
+# KERNEL: PC: 000006
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000000
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 1
+# KERNEL: Rb: 1
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000005
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000009
+# KERNEL: Jump target address: 00000f
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000018
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000005
+# KERNEL: 
+# KERNEL: Operation: Add
+# KERNEL: ALU result: 000005
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 1
+# KERNEL: Data: 000005
+# KERNEL: Data in register file: 000005
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 4
+# KERNEL: Instruction: CASNE R2, R1, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 100000100100010000000000
+# KERNEL: PC: 000009
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000005
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 1
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000005
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00000c
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000005
+# KERNEL: Branch: 00000c
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 2
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 5
+# KERNEL: Instruction: SW R1, R3, 0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000101000010110000000000
+# KERNEL: PC: 00000c
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000005
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 3
+# KERNEL: Rb: 1
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000005
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00000f
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 00000f
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 1
+# KERNEL: 
+# KERNEL: MEM stage
+# KERNEL: Contents:
+# KERNEL: Write address: 000000
+# KERNEL: Data in: 000005
+# KERNEL: Memory content: 000005
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 6
+# KERNEL: Instruction: LWS R4, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000001001000000000000000
+# KERNEL: PC: 00000f
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000005
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000000
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000012
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000012
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 1
+# KERNEL: 
+# KERNEL: MEM stage
+# KERNEL: Contents:
+# KERNEL: Read address: 000000
+# KERNEL: Memory content: 000005
+# KERNEL: Memory output: 000005
+# KERNEL: 
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 4
+# KERNEL: Data: 000005
+# KERNEL: Data in register file: 000005
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 5
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 7
+# KERNEL: Instruction: JAL 9
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000110100000000000001001
+# KERNEL: PC: 000012
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000005
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000000
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000009
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000015
+# KERNEL: Jump target address: 00001b
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000030
+# KERNEL: 
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 7
+# KERNEL: Data: 000015
+# KERNEL: Data in register file: 000015
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 3
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 8
+# KERNEL: Instruction: LUI 5
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000111000000000000000101
+# KERNEL: PC: 00001b
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000005
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000005
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00001e
+# KERNEL: Jump target address: 00000f
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 00002d
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000004
+# KERNEL: Input B: 000005
+# KERNEL: 
+# KERNEL: Operation: Shift
+# KERNEL: ALU result: 000050
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 1
+# KERNEL: Data: 000050
+# KERNEL: Data in register file: 000050
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 9
+# KERNEL: Instruction: JR R7, 
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000011000001110000000000
+# KERNEL: PC: 00001e
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 7
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000015
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 001c00
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000021
+# KERNEL: Jump target address: 005400
+# KERNEL: Jump and return: 000015
+# KERNEL: Branch: 005421
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 2
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 10
+# KERNEL: Instruction: ADD R0, R0, R1
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000001100000000010000000
+# KERNEL: PC: 000015
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 1
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000050
+# KERNEL: Extended value: 000080
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000018
+# KERNEL: Jump target address: 000180
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000198
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000050
+# KERNEL: 
+# KERNEL: Operation: Add
+# KERNEL: ALU result: 000050
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000050
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 11
+# KERNEL: Instruction: J 11
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000110000000000000001011
+# KERNEL: PC: 000018
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 00000b
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00001b
+# KERNEL: Jump target address: 000021
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 00003c
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 2
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 12
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 000021
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000024
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000024
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 13
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 000024
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000027
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000027
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 14
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 000027
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00002a
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 00002a
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 15
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 00002a
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 00002d
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 00002d
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 16
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 00002d
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000030
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000030
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 17
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 000030
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000033
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000033
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: WARNING: tried to overwrite R0, but it's discarded!
+# KERNEL: WB stage
+# KERNEL: Contents:
+# KERNEL: Destination register: 0
+# KERNEL: Data: 000000
+# KERNEL: Data in register file: 000000
+# KERNEL: 
+# KERNEL: Flags:
+# KERNEL: Z-flag: 1
+# KERNEL: BEQ-flag: 0
+# KERNEL: 
+# KERNEL: CPI for previous instruction: 4
+# KERNEL: -----------------------------------------
+# KERNEL: 
+# KERNEL: 
+# KERNEL: Instruction no.: 18
+# KERNEL: Instruction: AND R0, R0, R0
+# KERNEL: IF stage
+# KERNEL: Contents:
+# KERNEL: IR: 000000000000000000000000
+# KERNEL: PC: 000033
+# KERNEL: 
+# KERNEL: ID stage
+# KERNEL: Register contents
+# KERNEL: R[0]: 000000
+# KERNEL: R[1]: 000050
+# KERNEL: R[2]: 000000
+# KERNEL: R[3]: 000000
+# KERNEL: R[4]: 000005
+# KERNEL: R[5]: 000000
+# KERNEL: R[6]: 000000
+# KERNEL: R[7]: 000015
+# KERNEL: Contents:
+# KERNEL: Ra: 0
+# KERNEL: Rb: 0
+# KERNEL: BusA: 000000
+# KERNEL: BusB: 000000
+# KERNEL: Extended value: 000000
+# KERNEL: 
+# KERNEL: PC calculations:
+# KERNEL: PC + 3: 000036
+# KERNEL: Jump target address: 000000
+# KERNEL: Jump and return: 000000
+# KERNEL: Branch: 000036
+# KERNEL: 
+# KERNEL: EXEC stage
+# KERNEL: Contents:
+# KERNEL: Input A: 000000
+# KERNEL: Input B: 000000
+# KERNEL: 
+# KERNEL: Operation: And
+# KERNEL: ALU result: 000000
+# KERNEL: ALU zero: 0
+# KERNEL: 
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 
+# #End simulation macro
+endsim
+# VSIM: Simulation has finished.

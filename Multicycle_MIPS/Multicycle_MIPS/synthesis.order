@@ -1,13 +1,3 @@
-i<>.\src\mux2to1.v
-i<>.\src\mux4to1.v
-i<>.\src\register_file.v
-i<>.\src\instruction_memory.v
-i<>.\src\memory_data.v
-i<>.\src\alu.v
-i<>.\src\control_unit.v
 i<>.\src\main.v
-i<>.\src\pc_control.v
-i<>.\src\update_flags.v
 i<>.\src\17_bit_extender.v
-i<>.\src\extender_10_bit.v
-i<>.\src\dasda.v
+i<>.\src\datapath_tb.v

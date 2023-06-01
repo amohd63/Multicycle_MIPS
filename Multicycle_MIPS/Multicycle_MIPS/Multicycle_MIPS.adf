@@ -32,6 +32,7 @@ SimulationAccessReadWritePaths=
 SimulationAccessReadWriteModules=
 SimulationAccessNetsPaths=
 SimulationAccessNetsModules=
+fileopenfolder=C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\src
 
 [SpecTracer]
 WindowVisible=0
@@ -41,20 +42,43 @@ HierarchyInformation=
 ShowHide=ShowTopLevel
 Selected=
 
+[Folders]
+Name0=Event Lists
+Directory0=C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\
+Extension0=lst
+Name1=Logs
+Directory1=C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\
+Extension1=log;htm;xml;txt
+Name2=Waveforms
+Directory2=C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\
+Extension2=asdb;awc;asdbc;asdbe
+Name3=Makefiles
+Directory3=C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\
+Extension3=mak
+Name4=Memory
+Directory4=C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\
+Extension4=mem;mif;hex
+Name5=Dll Libraries
+Directory5=C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\
+Extension5=dll
+Name6=PDF
+Directory6=C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\
+Extension6=pdf
+Name7=HTML
+Directory7=C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\
+Extension7=htm;html
+Name8=ALINT-PRO Workspaces
+Directory8=C:\Users\alima\Desktop\BZU\4th year\Architecture\pythonProject\Multicycle_MIPS\Multicycle_MIPS\
+Extension8=alintws
+
+[file_out:/t.bde]
+/..\compile\t.v=-1
+
 [Files]
-/mux2to1.v=-1
-/mux4to1.v=-1
-/register_file.v=-1
-/instruction_memory.v=-1
-/memory_data.v=-1
-/alu.v=-1
-/control_unit.v=-1
 /main.v=-1
-/pc_control.v=-1
-/update_flags.v=-1
-/extender_17_bit.v=-1
-/extender_10_bit.v=-1
-/dasda.v=-1
+/datapath_tb.v=-1
+/datapath_tb_runtest.do=-1
+/datapath_tb_settings.txt=-1
 
 [Files.Data]
 .\src\mux2to1.v=Verilog Source Code
@@ -68,6 +92,13 @@ Selected=
 .\src\pc_control.v=Verilog Source Code
 .\src\update_flags.v=Verilog Source Code
 .\src\extender_17_bit.v=Verilog Source Code
-
 .\src\extender_10_bit.v=Verilog Source Code
 .\src\dasda.v=Verilog Source Code
+.\src\t.bde=Block Diagram
+.\src\datapath_tb.v=Verilog Source Code
+.\src\extender.v=Verilog Source Code
+.\src\mux8to1.v=Verilog Source Code
+.\src\datapath_tb_runtest.do=Macro
+.\src\datapath_tb_settings.txt=Text File
+.\src\state.asf=State Diagram
+

@@ -58,7 +58,7 @@ with open("code.txt", "r") as file:
         tempSF = ""
         if 'NE' in comp[0]:
             tempCond += "10"
-        elif 'EQ' in comp[0]:
+        elif 'EQ' in comp[0] and comp[0] != 'BEQ':
             tempCond += "01"
         else:
             tempCond += "00"
@@ -68,15 +68,24 @@ with open("code.txt", "r") as file:
         else:
             tempSF += "0"
 
-        inst = comp[0].replace("EQ", "").replace("NE", "").replace("SF", "")
+        inst = comp[0].replace("EQ" if comp[0] != 'BEQ' else "", "").replace("NE", "").replace("SF", "")
         if instruction_type.get(inst) == "R":
             bin_instruct += tempCond
             bin_instruct += opcode.get(comp[0])
             bin_instruct += tempSF
-
-            for i in range(len(comp) - 1):
-                bin_instruct += decimal_to_3bit_binary(int(re.sub(r'\D', '', comp[i+1])))
-            bin_instruct += "0"*7
+            if comp[0] == "CMP":
+                bin_instruct += "0"*3
+                for i in range(len(comp) - 1):
+                    bin_instruct += decimal_to_3bit_binary(int(re.sub(r'\D', '', comp[i+1])))
+                bin_instruct += "0"*7
+            elif comp[0] == "JR":
+                bin_instruct += "0" * 3
+                bin_instruct += decimal_to_3bit_binary(int(re.sub(r'\D', '', comp[1])))
+                bin_instruct += "0" * 10
+            else:
+                for i in range(len(comp) - 1):
+                    bin_instruct += decimal_to_3bit_binary(int(re.sub(r'\D', '', comp[i+1])))
+                bin_instruct += "0"*7
 
         elif instruction_type.get(inst) == "I":
             bin_instruct += tempCond
@@ -138,9 +147,9 @@ print("Instruction memory Verilog code\n")
 print(instruction_memory_code)
 print("-" * 20)
 
-with open("./Multicycle_MIPS/Multicycle_MIPS/src/instruction_memory.v", "w") as file:
-    file.write(instruction_memory_code)
-
-print("Code is written to {instruction_memory.v} successfully.")
+# with open("./Multicycle_MIPS/Multicycle_MIPS/src/instruction_memory.v", "w") as file:
+#     file.write(instruction_memory_code)
+#
+# print("Code is written to {instruction_memory.v} successfully.")
 
 

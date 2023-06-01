@@ -2,30 +2,28 @@ MESSAGE "Pass 1. Scanning modules hierarchy."
 MESSAGE_SP VCP2113 "Module \$root found in current working library."
 BEGINPROGRESS Compiling...
 UPDATEPROGRESS 35
+MESSAGE_SP VCP2113 "Module main found in current working library."
+WARNING VCP2127 "Unable to map port type: unknown for port: registers in library module: main. Connection rules will not be checked for such port." 21  2
+WARNING VCP2127 "Unable to map port type: unknown for port: regPC in library module: main. Connection rules will not be checked for such port." 43  2
 MESSAGE "Pass 2. Processing instantiations."
 UPDATEPROGRESS 45
 MESSAGE "Pass 3. Processing behavioral statements."
-UPDATEPROGRESS 48
-UPDATEPROGRESS 52
-UPDATEPROGRESS 55
-UPDATEPROGRESS 59
+WARNING VCP2803 "Function UnitScopePackage_87.display_instruction result is ignored." "C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/datapath_tb.v" 50  48
 UPDATEPROGRESS 62
-UPDATEPROGRESS 66
-UPDATEPROGRESS 69
-UPDATEPROGRESS 73
-WARNING VCP2803 "Function register_file result is ignored." "C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/dasda.v" 431  53
 UPDATEPROGRESS 80
+WARNING VCP2814 "Function display_instruction should return a value." "C:/Users/alima/Desktop/BZU/4th year/Architecture/pythonProject/Multicycle_MIPS/Multicycle_MIPS/src/datapath_tb.v" 138  30
 MESSAGE "Running Optimizer."
 MESSAGE "ELB/DAG code generating."
 MESSAGE_SP VCP2113 "Module \$root found in current working library."
-UPDATEPROGRESS 84
-UPDATEPROGRESS 88
-UPDATEPROGRESS 92
+UPDATEPROGRESS 83
+UPDATEPROGRESS 86
+UPDATEPROGRESS 90
+UPDATEPROGRESS 93
 UPDATEPROGRESS 96
 UPDATEPROGRESS 100
-MESSAGE "Unit top modules: main."
-MESSAGE "$root top modules: main update_flags extender_10_bit extender_17_bit memory_data instruction_memory mux2to1 mux4_1 register_file alu control_unit pc_control."
+MESSAGE "Unit top modules: datapath_tb."
+MESSAGE "$root top modules: update_flags extender_10_bit extender_17_bit memory_data instruction_memory mux4_1 register_file alu control_unit pc_control datapath_tb extender."
 ENDPROGRESS Compiling...
-SUCCESS "Compile success 0 Errors 1 Warnings  Analysis time: 0[s]."
+SUCCESS "Compile success 0 Errors 4 Warnings  Analysis time: 0[s]."
 WARNING ALOG: "The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available."
 MESSAGE "done"
