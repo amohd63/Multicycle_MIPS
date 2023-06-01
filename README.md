@@ -10,6 +10,7 @@ The implementation can be found [here](https://github.com/amohd63/Multicycle_MIP
 The testing of all instructions, [here](https://github.com/amohd63/Multicycle_MIPS/tree/master/Testing).
 ***
 For writing boolean expressions and equations, I used these two codes [Equations with 2-bit output](https://github.com/amohd63/Multicycle_MIPS/blob/master/2_bit_truth_table.py), [Equations with 1-bit output](https://github.com/amohd63/Multicycle_MIPS/blob/master/1_bit_truth_table.py).
+
 Otherwise, all .csv files attached are the truth tables which I used with the codes above.
 ***
 You can find online websites for generating the boolean equations, I found [this website](https://www.charlie-coleman.com/experiments/kmap/) very useful.
