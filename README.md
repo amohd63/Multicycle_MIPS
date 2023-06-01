@@ -17,4 +17,4 @@ You can find online websites for generating the boolean equations, I found [this
 ***
 **How to run the Verilog code**
 
-In the project files [here](https://github.com/amohd63/Multicycle_MIPS/tree/master/Multicycle_MIPS/Multicycle_MIPS/src), open **datapath_tb_runtest.do** file, then click on "**Execute script**" [image](https://imgur.com/gqcQ2Rx).
+In the project files [here](https://github.com/amohd63/Multicycle_MIPS/tree/master/Multicycle_MIPS/Multicycle_MIPS/src), open **datapath_tb_runtest.do** file, then click on ["**Execute script**"](https://imgur.com/gqcQ2Rx).
